@@ -1,0 +1,72 @@
+{
+  "job": {
+    "content": [
+      {
+        "reader": {
+          "name": "mysqlreader",
+          "parameter": {
+            "column": [
+              "id_p",
+              "name",
+              "city",
+              "date",
+              "weight",
+            ],
+            "where": "id_p>=3",
+            "connection": [
+              {
+                "jdbcUrl": [
+                  "jdbc:mysql://node01:3306/test"
+                ],
+                "table": [
+                  "person_information"
+                ]
+              }
+            ],
+            "password": "123456",
+            "splitPk": "",
+            "username": "root"
+          }
+        },
+        "writer": {
+          "name": "hdfswriter",
+          "parameter": {
+            "column": [
+              {
+                "name": "id_p",
+                "type": "int"
+              },
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "city",
+                "type": "string"
+              },
+              {
+                "name": "date",
+                "type": "date"
+              },
+              {
+                "name": "weight",
+                "type": "double"
+              }
+            ],
+            "defaultFS": "hdfs://node01:8020",
+            "fieldDelimiter": "\t",
+            "fileName": "person_information",
+            "fileType": "text",
+            "path": "/person_information",
+            "writeMode": "append"
+          }
+        }
+      }
+    ],
+    "setting": {
+      "speed": {
+        "channel": 1
+      }
+    }
+  }
+}
