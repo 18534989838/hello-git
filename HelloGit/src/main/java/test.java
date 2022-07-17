@@ -5,5 +5,7 @@ public class test {
         System.out.println("提交到ty分支上");
         System.out.println("提交到ty分支上1");
         System.out.println("提交到3分支上!!!");
+        System.out.println("提交到ty分支上2");
+        System.out.println("提交到ty2分支上2");
     }
 }
